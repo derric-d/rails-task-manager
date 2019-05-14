@@ -1,0 +1,12 @@
+<h1>Tasks Index</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      [<%= task.completed == true ? "✓" : "✗" %>] <%= link_to task.title, task_path(task) %>
+      <%= link_to "🧨", task_path(task), method: :delete, data: { confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'add a task', new_task_path %>
