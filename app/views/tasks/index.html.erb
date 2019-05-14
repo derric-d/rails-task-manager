@@ -2,7 +2,7 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li>
+    <li id='task-list'>
       [<%= task.completed == true ? "✓" : "✗" %>] <%= link_to task.title, task_path(task)%>
       <%= link_to "🧨", task_path(task), method: :delete, data: { confirm: "Are you sure?"} %>
     </li>
